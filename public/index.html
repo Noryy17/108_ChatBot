@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar panel frame -->
+            <div class="panel sidebar-inner">
+                <div class="panel-header">
+                    <span>◈ MENU ◈</span>
+                </div>
+
+                <div class="panel-body sidebar-body">
+                    <!-- Logo -->
+                    <div class="sidebar-logo">
+                        <div class="logo-text">CHAT AI</div>
+                        <div class="logo-deco">════════════</div>
+                    </div>
+
+                    <!-- New Chat -->
+                    <button class="retro-btn" id="newChatBtn">
+                        <span class="btn-deco">►</span> NEW CHAT
+                    </button>
+
+                    <!-- History Panel -->
+                    <div class="sub-panel">
+                        <div class="sub-panel-header">╔ HISTORY ╗</div>
+                        <ul class="chat-history" id="chatHistory">
+                            <li class="history-empty">No data.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Nav Menu -->
+                    <div class="sub-panel">
+                        <div class="sub-panel-header">╔ NAVIGATE ╗</div>
+                        <ul class="nav-menu">
+                            <li class="nav-item active"><span>►</span> Chat</li>
+                            <li class="nav-item"><span>►</span> Settings</li>
+                            <li class="nav-item"><span>►</span> About</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Status bar at bottom -->
+                <div class="panel-footer">
+                    <span class="status-indicator"></span>
+                    <span>SYSTEM: ONLINE</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN ===== -->
+        <div class="main">
+
+            <!-- ===== NAVBAR / HUD ===== -->
+            <nav class="hud">
+                <div class="hud-left">
+                    <button class="hamburger" id="hamburgerBtn">☰</button>
+                    <span class="hud-block">█</span>
+                    <span class="hud-title">CHAT AI</span>
+                    <span class="hud-sep">│</span>
+                    <span class="hud-label">TERMINAL</span>
+                </div>
+                <div class="hud-center">
+                    <span class="hud-deco">──────</span>
+                    <span class="hud-badge">▣ ACTIVE</span>
+                    <span class="hud-deco">──────</span>
+                </div>
+                <div class="hud-right">
+                    <span class="hud-stat">
+                        <span class="stat-label">STATUS</span>
+                        <span class="stat-bar">████</span>
+                    </span>
+                    <span class="hud-sep">│</span>
+                    <span class="hud-clock" id="clock">00:00:00</span>
+                </div>
+            </nav>
+
+            <!-- ===== CHAT ===== -->
+            <main class="chat-panel">
+                <div class="chat-scroll" id="chatArea">
+                    <div class="welcome" id="welcomeScreen">
+                        <div class="welcome-art">
+┌──────────────────────────┐
+│                          │
+│       C H A T  A I       │
+│                          │
+│    [ RETRO TERMINAL ]    │
+│                          │
+└──────────────────────────┘
+                        </div>
+                        <div class="welcome-box pixel-box">
+                            <span id="welcomeText"></span><span class="caret">█</span>
+                        </div>
+                        <p class="hint-blink">▼ PRESS ENTER TO START ▼</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- ===== INPUT ===== -->
+            <footer class="input-area">
+                <div class="input-hud">
+                    <span class="input-deco">╠</span>
+                    <span class="input-label">COMMAND INPUT</span>
+                    <span class="input-deco-line">════════════════════════</span>
+                    <span class="input-deco">╣</span>
+                </div>
+                <form id="chatForm">
+                    <div class="input-row">
+                        <span class="prompt">►_</span>
+                        <textarea id="userInput" placeholder="Ketik pesan..." rows="1" spellcheck="false"></textarea>
+                        <button type="submit" id="sendBtn" class="retro-btn send">SEND ►</button>
+                    </div>
+                </form>
+                <div class="input-footer">
+                    <span>[ ENTER ] Send</span>
+                    <span>[ SHIFT+ENTER ] New Line</span>
+                    <span class="footer-deco">■■■■■</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
